@@ -18,35 +18,35 @@ The following provides the operations of the Runbook in regards to the Run-As Ac
    
 2. Create Resource Group and Automation Account
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 3. Disable Managed Identity during Automation Account creation.  We will be instead leveraging an Automation Account.  The reason for this is our Run-As account will need Azure AD API Permissions to Azure Key Vault to retrieve the Service Account password.  Managed Identities do not show up in the Azure Portal when viewing App Registrations whereas Run-As accounts do.  Managed Identities can work but require PowerShell to manage API Permissions to Azure AD.
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 4. Create a Run-As Account for our Automation Account.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 5. In Azure AD, give our Run-As Account Delegated Permissions to Azure Key Vault.  Go to Azure Active Directory > App Registrations > All applications > find our Run-As Account.
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 6. Click our Run-As Account > API Permissions > Add a permission
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 7. Click APIs my organization uses and search for Azure Key Vault.  
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
 8. Click on Azure Key Vault and assign user_impersonation.
 
-    ![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo7.jpg)
 
 9. Create a new Standard Key Vault (Premium works too if you plan on leveraging this Key Vault for other uses and need HSM Backed Keys). Make sure to add a new Access Policy permission granting permission for your Run-As account to Get secrets.
 
-    ![Alt text](./DemoScreenshots/demo8.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo8.jpg)
 
 10. Create a Service Account in Active Directory Domain Services (ADDS) which has Local Administrator priveldges on the Servers in which Remote Code Execution will occur against. Allow the Service Account to replicate to Azure Active Directory (AAD) which by default replicates every 30 minutes.
 
@@ -61,27 +61,27 @@ The following provides the operations of the Runbook in regards to the Run-As Ac
 
     For purposes of my lab, I'm going to use my Domain Admin Account, Shudnow\eshudnow. I'm also going to name the Secret, HRWRemoteCodeExecutionKVSecret.
 
-    ![Alt text](./DemoScreenshots/demo9.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo9.jpg)
 
 13. Verify the Key Vault Secret has been created.
 
-    ![Alt text](./DemoScreenshots/demo10.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo10.jpg)
 
 14. In our Automation Account, create a User hybrid worker group
 
-    ![Alt text](./DemoScreenshots/demo11.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo11.jpg)
 
 15. ASsign a name and leave 'Use run as credentials" to No.
     
-    ![Alt text](./DemoScreenshots/demo12.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo12.jpg)
 
 16. Add an Azure Virtual Machine as the Hybrid Runbook Worker.  If you'd alternatively want an on-premises server to act as the Hybrid Runbook Worker, you will need to first ARC-Enable this VM.  For information on how to do that, please click [here](https://docs.microsoft.com/en-us/azure/azure-arc/servers/onboard-portal).
 
-    ![Alt text](./DemoScreenshots/demo13.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo13.jpg)
 
 17. Create a Runbook in our Automation Account.  We're using PowerShell 5.1 as the Runtime as PowerShell 7.1 is in preview.
 
-    ![Alt text](./DemoScreenshots/demo14.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo14.jpg)
 
 18. Copy the code into the Runbook and modify the following:
     - **$Servers** - Servers you want the Hybrid Runbook Worker to execute remote code against.
@@ -89,7 +89,7 @@ The following provides the operations of the Runbook in regards to the Run-As Ac
     - **$KeyVaultName** - Name of the Key Vault which holds the Secret containing the password for the Service Account that will be used to execute remote code.
     - **$KeyVaultSecretName** - Name of the Secret stored in Key Vault which contains the password for the Service Account that will be used to execute remote code. 
 
-    ![Alt text](./DemoScreenshots/demo15.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo15.jpg)
 
     **Note:** You will also want to modify line 70 to specify the PowerShell Script you will want to execute remotely against the servers defined in the $Servers array. 
 
@@ -101,7 +101,7 @@ The following provides the operations of the Runbook in regards to the Run-As Ac
     
     In the Script, we have a single server specified in the $Servers array.  This server is, vmdc01.  On vmdc01, we have a PowerShell script in C:\PowerShell\Script.ps1 as specified above. 
 
-    ![Alt text](./DemoScreenshots/demo16.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo16.jpg)
 
     As you can see, this is the only file in the folder.  The code within this script is simple.  Obtain a list of files in C:\Temp and create a log file with the list of files found.  This is to demonstrate that the Hybrid Runbook Worker is successfully executing the PowerShell Script Remotely.
 
@@ -118,20 +118,20 @@ The following provides the operations of the Runbook in regards to the Run-As Ac
 
     You will be prompted to install the NuGet provider and trust the repository.  Select the options as specified in the following screenshot.
 
-    ![Alt text](./DemoScreenshots/demo17.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo17.jpg)
 
     It will take several minutes after selecting these options (sometimes even 10 minutes or so) for the the Az PowerShell Modules install to begin installing. In the meantime, it may look like the script is hanging.  Be patient, they'll eventually begin and complete installation.  
 
 20. Execute the Runbook against the Hybrid Runbook Worker.
     
-    ![Alt text](./DemoScreenshots/demo18.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo18.jpg)
 
-    ![Alt text](./DemoScreenshots/demo19.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo19.jpg)
 
 21. Verify results by ensuring the Runbook Worker shows as Completed 
     
-    ![Alt text](./DemoScreenshots/demo20.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo20.jpg)
 
 22. RDP onto the Remote Server to verify the log file has been generated indicating the Hybrid Runbook Worker successfully executed the PowerShell Script remotely.
 
-    ![Alt text](./DemoScreenshots/demo21.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo21.jpg)

@@ -50,27 +50,27 @@ Imports a Settings.json that defines Subscriptions, Regions, and Percentage Thre
 
 3. Open PowerShell, navigate to script directory, and connect to Azure leveraging Connect-AZAccount
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 
 4. Execute the script using .\QuotaReport.ps1. The script executes, cycles through all subscriptions you have defined, and outputs an HTML Output file per Subscription. These HTML Output files are timestamped and have the SubscriptionID in the file name as well.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 5. After opening our HTML Output File for our first subscription, we can see the first table will include CPU Quota for each region defined:
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 6. Scrolling down in our HTML Output file, we will see similar Subnet Availability Information also color coded based on thresholds defined in Settings.json.
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 7. Taking a look at our HTML Output File for our second subscription which is more limited on CPU Quota, we can see the first table will include CPU Quota for each region defined:
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
 8. I created a new Virtual Machine in our second subscription which would put the CPU Quota for that SKU at the red threshold and re-ran the script.  Opening our new HTML Output File for this second subscription and we see the new table displaying that CPU Quota as Red.
 
-    ![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo7.jpg)
 
 

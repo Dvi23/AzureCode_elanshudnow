@@ -22,15 +22,15 @@ This script creates an HTML Report on Public IP Information across a single or a
     .\AzPublicIPReport.ps1 -SubscriptionID All -SingleHTMLOutput $true
     ```
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
    This will generate a new folder called AzPublicIPReport:
 
-   ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+   ![Alt text](./DemoScreenshots/demo2.jpg)
 
    Open the AzPublicIPReport folder and open the timestamped folder within that contains the single html file that was generated. The folder under the AzPublicIPReport folder is timestamped to allow the script to be run again without overwriting the original file to maintain a history.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
    Verify the information reported. As you will see, the report will include the following pieces of information about the Public IP Resource, such as:
 
@@ -45,7 +45,7 @@ This script creates an HTML Report on Public IP Information across a single or a
   
     <br/>
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 
 1. To create a separate HTML Outputs for each Azure Subscription, leverage -SingleHTMLOutput $false.  
@@ -55,17 +55,17 @@ This script creates an HTML Report on Public IP Information across a single or a
     .\AzPublicIPReport.ps1 -SubscriptionID All -SingleHTMLOutput $false
     ```
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 
     Within the AzPublicIPReport Folder, just as before, there will be a new timestamped folder.  
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
     Within our timestamped folder, there will be a separate file named after each Subscription that was processed:
 
-    ![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo7.jpg)
 
     Verify the information reported. It will contain Public IP Information for each subscription.
 
-    ![Alt text](./DemoScreenshots/demo8.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo8.jpg)

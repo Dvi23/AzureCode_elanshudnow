@@ -10,22 +10,22 @@ This Azure Virtual Machine Volumes provides information around Azure Virtual Mac
 
 2. Install by going to Azure Monitor > Workbooks > click New.
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 3. Click the edit icon on the Workbook toolbar
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 4. Copy the contents of the downloaded Workbook into the Editor by fully replacing all the existing content in the Workbook
 
-    ![Alt text](./DemoScreenshots/demo3.gif?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.gif)
 
 ## Workbook Features
 
 ### Parameters and Tab View Filtering
 There are three parameters that dictate the data that appears in the rest of the Workbook.  
 
-  ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+  ![Alt text](./DemoScreenshots/demo4.jpg)
 
 These parameters include:
 - **Subscriptions** - The Subscriptions parameter filters on Subscriptions that contain both Azure Virtual Machines and Azure Arc Servers in specific Subscription(s). If you have 1000 Subscriptions but only 5 have Azure Arc for Server and only 10 Subscriptions have Azure Virtual Machine resources, only 15 Subscriptions will appear in the dropdown.
@@ -36,8 +36,8 @@ These parameters include:
 
 If presenting the data via Performance Counters, you will be provided a table that looks as such:
 
-  ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+  ![Alt text](./DemoScreenshots/demo5.jpg)
 
 If presenting the data via Virtual Machine Insights, you will be provided a similar table with additional results including FreeSpaceGB and volumeSizeGB:
 
-  ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+  ![Alt text](./DemoScreenshots/demo6.jpg)

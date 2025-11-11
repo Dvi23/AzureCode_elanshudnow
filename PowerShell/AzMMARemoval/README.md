@@ -27,7 +27,7 @@ There we will be two separate instructional sections:
 
     Looking at our Management Group Hiearchy, our script will executed to target our Parent Management Group and its subscription, and will the -Recurse option set to $true, will also target our Child Management Group and its subscription.
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
     The command we execute will be:
       ```PowerShell
@@ -42,16 +42,16 @@ There we will be two separate instructional sections:
     * Script will then pull all subscriptions that have MMA on them.  The script will then check each VM whether it has AMA.  The results are provided as well as a status as to what WOULD happen if the script was not run in logging only mode.  If a Subscription has no VMs with MMA, it will provide this information.
     * Location to a timestamped CSV file that contains the results of this data.
 
-![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo2.jpg)
 
   Here is an example of executing the script against a single subscription with LoggingOnly mode enabled and the resulting PowerShell output.
-  ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+  ![Alt text](./DemoScreenshots/demo3.jpg)
 
 4. Analyze CSV file
 
     Open the CSV file based on the location provided at the end of the PowerShell Output. This will be in the same folder the script was executed in.  The script will provide the same data that was provided in the PowerShell Output in spreadsheet format.
 
-      ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+      ![Alt text](./DemoScreenshots/demo4.jpg)
 
 
 ### Removal Mode
@@ -61,7 +61,7 @@ There we will be two separate instructional sections:
 
     Looking at our Management Group Hiearchy, our script will executed to target our Parent Management Group and its subscription, and will the -Recurse option set to $true, will also target our Child Management Group and its subscription.
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
     The command we execute will be:
       ```PowerShell
@@ -69,7 +69,7 @@ There we will be two separate instructional sections:
     ```
 3. As this is a destructive change (uninstalling MMA), the script, after run will inform you what Script Mode the script is executing (with red text informing you logging only mode is disabled and the script will remove MMA on VMs that also have AMA) and require confirmation input that will only accept the responses Yes or No (default is No).
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 4. Analyze the PowerShell Output.  The following data will be displayed:
     * Script Mode
@@ -81,13 +81,13 @@ There we will be two separate instructional sections:
     * Script will then pull all subscriptions that have MMA on them.  The script will then check each VM whether it has AMA.  The results are provided as well as a status informing you what VMs are running through the MMA removal process as well as a follow up status whether the removal was successful or unsuccessful for the given VM.  If a Subscription has no VMs with MMA, it will provide this information.
     * Location to a timestamped CSV file that contains the results of this data.
 
-![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo6.jpg)
 
   Here is an example of executing the script against a single subscription with LoggingOnly mode disabled and the resulting PowerShell output.
-  ![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+  ![Alt text](./DemoScreenshots/demo7.jpg)
 
 5. Analyze CSV file
 
     Open the CSV file based on the location provided at the end of the PowerShell Output. This will be in the same folder the script was executed in.  The script will provide the same data that was provided in the PowerShell Output in spreadsheet format.  
 
-      ![Alt text](./DemoScreenshots/demo8.jpg?raw=true)
+      ![Alt text](./DemoScreenshots/demo8.jpg)

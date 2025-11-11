@@ -22,15 +22,15 @@ This script creates a report for Azure Advisor Cost Recommendations at the Manag
     .\AzCostAdvisorMGScope.ps1 -ManagementGroupID Parent1
     ```
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
    This will generate a new folder called AzPublicIPReport:
 
-   ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+   ![Alt text](./DemoScreenshots/demo2.jpg)
 
   3.  Open the AzCostAdvisorMGScope folder and open the timestamped folder within that contains the single csv file that was generated. The folder under the AzPublicIPReport folder is timestamped to allow the script to be run again without overwriting the original file to maintain a history.
 
-      ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+      ![Alt text](./DemoScreenshots/demo3.jpg)
 
   4. Verify the information reported. As you will see, the report will include the following pieces of information about the Cost Recommendations, such as:
 
@@ -46,7 +46,7 @@ This script creates a report for Azure Advisor Cost Recommendations at the Manag
      
        <br/>
 
-      ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+      ![Alt text](./DemoScreenshots/demo4.jpg)
 
 
 ## Recursion
@@ -61,4 +61,4 @@ In order to obtain Cost Advisor Recommendations for all subscriptions within the
 
     As we can see in the following execution, additional subscriptions have been scanned for Azure Advisor results.
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)

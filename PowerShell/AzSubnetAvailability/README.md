@@ -19,15 +19,15 @@ This script creates an HTML Report on Subnet Availability across a single or all
     .\AzSubnetAvailability.ps1 -SubscriptionID All -SingleHTMLOutput $true
     ```
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
    Open the html file that was generated in the same folder. The file is timestamped to allow the script to be run again without overwriting the original file to maintain a history.
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
    Verify the information reported.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
     > **Note**: The columns, by default, are sorted by PercentUsed. To change the sorting behavior, you can specify -SortColumn VNET. 
 
@@ -38,23 +38,23 @@ This script creates an HTML Report on Subnet Availability across a single or all
     .\AzSubnetAvailability.ps1 -SubscriptionID All -SingleHTMLOutput $false
     ```
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
     This will generate a new folder called AzSubnetAvailability:
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
     Within the AzSubnetAvailability Folder will be a timestamped folder.  This allows the script to be run again without overwriting the original output files from this execution.
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
     Within our timestamped folder, there will be a separate file named after each Subscription that was processed:
 
-    ![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo7.jpg)
 
     Verify the information reported. It will only contain VNET & Subnet data for the given subscription.
 
-    ![Alt text](./DemoScreenshots/demo8.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo8.jpg)
 
     > **Note**: As stated earlier, the columns, by default, are sorted by PercentUsed. To change the sorting behavior, you can specify -SortColumn VNET. 
 
@@ -82,7 +82,7 @@ The command we execute will be:
 
 The coloring of the cells changed based on the thresholds we defined.
 
-![Alt text](./DemoScreenshots/demo9.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo9.jpg)
 
 
 

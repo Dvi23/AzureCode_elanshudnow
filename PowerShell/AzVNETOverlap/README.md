@@ -21,4 +21,4 @@ This script creates will output any VNET that overlaps with another VNET.
     .\AzVNETOverlap.ps1 -SubscriptionID All
     ```
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)

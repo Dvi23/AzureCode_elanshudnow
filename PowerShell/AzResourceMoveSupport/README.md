@@ -13,7 +13,7 @@ This script will take an Azure Usage Report csv file and provide new columns as 
 
 2. Download a copy of your Azure Usage Details Report by going to the Azure Portal, Cost Management + Billing, clicking on your Billing Scope, and selecting your Billing Scope.  Download the latest copy of your Usage Details Report.  This will provide you a CSV download of all Azure resources that fall within that Billing Scope including much information about each resource including the Resource Type, Cost, Subscription, and much more.
    
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 3. Execute the AzResourceMoveSupport.ps1 script.  Upon execution, the script will prompt you to select the Azure Usage Details csv file.  
 
@@ -22,12 +22,12 @@ This script will take an Azure Usage Report csv file and provide new columns as 
     .\AzResourceMoveSupport.ps1
     ```
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
    
    
  4. Review Script Execution.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
     Take note of the following:
 
@@ -44,7 +44,7 @@ This script will take an Azure Usage Report csv file and provide new columns as 
    
 6. Read the ResourcesOutput.csv output file.  Again, all original columns in the Usage Report Details csv are maintained with this script adding the 3 additional cumns for Resource Group, Subscription, and Region move support.  Here is an example of a tiny portion of the CSV displaying the new data.
 
-      ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+      ![Alt text](./DemoScreenshots/demo4.jpg)
 
 ## Column Information
 Here is a list of every column provided in the ResourcesOutput.csv:

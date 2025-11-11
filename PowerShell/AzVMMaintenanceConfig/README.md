@@ -16,7 +16,7 @@ This script creates assigns a Maintenance Configuration to all Virtual Machines,
 
 2. For purposes of this demonstration, as can be seen, our Maintenance Configuration currently has no VM resources assigned.
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
       
 2. Execute according to the various specified in the script which include.  In this example, we'll run the script using the parameter -ManagementGroupID Parent1, specify the ResourceID of our Maintenance Configuration, and set the mode to Add.
 
@@ -28,7 +28,7 @@ This script creates assigns a Maintenance Configuration to all Virtual Machines,
     > **Note**: Alternatively, instead of using -ManagementGroupID, you can instead leverage -SubscriptionID.
 
    
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 3. The script initiates and provides some general information as to what the script will do.  As we are running in Add mode, the script will run through 2 stages:
     * Stage 1
@@ -38,11 +38,11 @@ This script creates assigns a Maintenance Configuration to all Virtual Machines,
       * Assign the Maintenance Configuration to the Virtual Machine.
 
   
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 4. By going back into the Maintenance Configuration in the Azure Portal, we can validate that the 2 Virtual Machines contained within the Management Group specified have been assigned as resources to the Maintenance Configuration.
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 ## Instructions to Remove Maintenance Configurations from Virtual Machines
 
@@ -55,11 +55,11 @@ Now that we have two Virtual Machines assigned to the mc1 Maintenance Configurat
     .\AzVMMaintenanceConfig.ps1 -ManagementGroupID Parent1 -Mode Remove
     ```
    
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 2. The script initiates and provides some general information as to what the script will do. As we are running in Remove mode, the script will run through 1 stage which is cycling through the Virtual Machines within the Management Group or Subscription specified.
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
 
 ## Recursion
@@ -74,4 +74,4 @@ In order to obtain Cost Advisor Recommendations for all subscriptions within the
 
     As we can see in the following execution, additional subscriptions have been scanned for Azure Advisor results.
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)

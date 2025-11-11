@@ -15,23 +15,23 @@ This PowerShell Script takes a list of Azure Subscriptions you have selected in 
       
 2. Open PowerShell, navigate to script directory, and connect to Azure leveraging Connect-AZAccount.  There is no need to connect to a specific subscription as we will be leveraging Rest API via Invoke-AzRestMethod.
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 3. Execute the script using .\Get-AvailabilityZoneMapping -Region \<Region>.  
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
    
 4. A grid view of all Subscriptions in your environment appears.  Select or Multi-Select the Subscriptions you want to collect Logical to Physical Availability Zone Information for.
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 5. The status of the collection process as well as the output location are provided in the PowerShell Console. 
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 6. In the output CSV that is generated, you will see details around the Subscriptions and Physical to Logical Availability Zone Mapping. 
    
-   ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+   ![Alt text](./DemoScreenshots/demo5.jpg)
 
 ## 10/23/2024 Script Update - Checking for Valid Regions and Zonal Existance.
 In the script update pushed on 10/23/2024, I have added two new capabilities to the script:
@@ -39,8 +39,8 @@ In the script update pushed on 10/23/2024, I have added two new capabilities to 
 - If the Region exists as typed, the script will check if the Region contains Availability Zones.  If not, the script will terminate with the reason being the Region does not contain Availability Zones and provide documentation link to what Regions support Availability Zones.
 
 ### Region Does Not Exist:
-![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo6.jpg)
 
 ### Availability Zone Does Not Exist for Region:
-![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo7.jpg)
 

@@ -31,7 +31,7 @@ Leverage a Packer Script executed on a Linux Server to deploy a Generalized Wind
 
     After running the command in Azure CLI, please record the following values:
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 4. The following Environmental Variables are set based on the JSON response information provided in the az ad sp command above. Having these Environmental Variables set allows Packer to know how to authenticate to Azure.
 
@@ -50,18 +50,18 @@ Leverage a Packer Script executed on a Linux Server to deploy a Generalized Wind
 
     Verify there are no errors in the initial script execution:
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 6. Verify the Resource Group that is outlined in the above screenshot exists in the Azure Portal.  You will notice that Packer creates a temporary Resource Group trailing with a random identifier.  This is because a temporary Virtual Machine must be built that will execute the Builder section of the code defined in the Packer script.  The Builder section finishes with generalizing the VM with sysprep.  
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 7. When Packer completes, you will see one of the last steps it does after creating the Managed Image is to clean up the VM resources. 
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
     However, it mentions it fails to clean up the OS Disk.  If you give it several minutes, you'll notice Packer does successfully clean up all VM resources and automatically deletes the temporary Resource Group.
 
 8. In the Resource Group you specified in the azure-resource-group variable within your Packer script, you will now see your Managed Image.  You can now deploy new VMs from your Managed Image or leverage Terraform to deploy VMs leveraging the Managed Image.
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)

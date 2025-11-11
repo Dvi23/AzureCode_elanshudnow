@@ -18,16 +18,16 @@ Obtain a list of all Azure AD Application Service Principals and obtain a list o
    
 2. Open PowerShell, navigate to script directory, and connect to Azure leveraging Connect-AZAccount
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 
 3. Execute the script using .\ServicePrincipalExpirationReport.ps1. The script executes and outputs an HTML Output file. These HTML Output files are timestamped in the file name.
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 4. After opening our HTML Output File, we can see the table will include Service Principal information for each Azure AD Application:
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 
 

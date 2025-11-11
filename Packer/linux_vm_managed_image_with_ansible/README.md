@@ -37,7 +37,7 @@ Leverage a Packer Script executed on a Linux Server to deploy a Generalized Linu
 
     After running the command in Azure CLI, please record the following values:
 
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 4. The following Environmental Variables are set based on the JSON response information provided in the az ad sp command above. Having these Environmental Variables set allows Packer to know how to authenticate to Azure.
 
@@ -56,24 +56,24 @@ Leverage a Packer Script executed on a Linux Server to deploy a Generalized Linu
 
     Verify there are no errors in the initial script execution:
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 6. Verify the Resource Group that is outlined in the above screenshot exists in the Azure Portal.  You will notice that Packer creates a temporary Resource Group trailing with a random identifier.  This is because a temporary Virtual Machine must be built that will execute the Builder section of the code defined in the Packer script.  The Builder section finishes with generalizing the VM with sysprep.  
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 7. As the code runs, you will notice in the output that Ansible begins execution and installs any roles that are defined.
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 8. When Packer completes, you will see one of the last steps it does after creating the Managed Image is to clean up the VM resources. 
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
 
 
 9.  In the Resource Group you specified in the azure-resource-group variable within your Packer script, you will now see your Managed Image.  You can now deploy new VMs from your Managed Image or leverage Terraform to deploy VMs leveraging the Managed Image.
 
-    ![Alt text](./DemoScreenshots/demo6.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo6.jpg)
 
 ## Ansible Configuration
 In most public documentation, it shows how to execute a single Ansible Playbook using Packer.  However, the solution I provide allows you to run multiple roles.  You define a root.yml playbook which executes as many roles (playbooks within the roles) as you have defined within the root.yml file.  We do need to specify the path to which the roles are created.
@@ -99,7 +99,7 @@ Taking a good at the root.yml file: if you have multiple Ansible Roles you want 
 
 Then within the path you've specified in roles_path which is ./ansible/roles, we would add a new folder for each of our Ansible Roles.  For example, our git role we see above, there is a folder under our ansible directory called roles, with the git directory under it, and a tasks folder under that which includes our playbook to install git.
 
-![Alt text](./DemoScreenshots/demo7.jpg?raw=true)
+![Alt text](./DemoScreenshots/demo7.jpg)
 
 Our code to install git within our main.yml role file is simple:
 

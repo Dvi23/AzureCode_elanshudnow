@@ -37,7 +37,7 @@ This Terraform Script executed on a Linux Server will deploy a single Ubuntu Vir
 
     After running the command in Azure CLI, please record the following values:
     
-    ![Alt text](./DemoScreenshots/demo1.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo1.jpg)
 
 
 3. The following Environmental Variables are set based on the JSON response information provided in the az ad sp command above. Having these Environmental Variables set allows Terraform to know how to authenticate to Azure.
@@ -57,7 +57,7 @@ This Terraform Script executed on a Linux Server will deploy a single Ubuntu Vir
 
     Verify there are no errors in the initialization process:
 
-    ![Alt text](./DemoScreenshots/demo2.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo2.jpg)
 
 5. Run terraform plan which will leverage the Service Principal, connect to Azure, and determine what Terraform needs to do in order to create the resources based on Terraform's state file.  It will also see that the admin_password variable is blank and prompt to specify the value admin_password. 
 
@@ -69,7 +69,7 @@ This Terraform Script executed on a Linux Server will deploy a single Ubuntu Vir
 
     The following only provides a subset of the response back showing a preview of resources that will be created:
 
-    ![Alt text](./DemoScreenshots/demo3.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo3.jpg)
 
 6. Run terraform apply which will then create the resources.
 
@@ -79,8 +79,8 @@ This Terraform Script executed on a Linux Server will deploy a single Ubuntu Vir
 
     As can be seen, Terraform has created the resources and has Outputed the Public IP as specified in main.tf.
 
-    ![Alt text](./DemoScreenshots/demo4.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo4.jpg)
 
 7. In the Azure Portal, verify the Resource Group has been created as well as the Virtual Machine and its corresponding resources.
 
-    ![Alt text](./DemoScreenshots/demo5.jpg?raw=true)
+    ![Alt text](./DemoScreenshots/demo5.jpg)
